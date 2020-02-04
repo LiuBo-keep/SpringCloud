@@ -2,6 +2,7 @@ package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.entities.Dept;
 import com.atguigu.springcloud.service.DeptService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -18,6 +19,9 @@ public class DeptController {
     @Autowired
     private DeptService service;
 
+    @Autowired
+    private DiscoveryClient client;
+
     @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
     public boolean add(@RequestBody Dept dept) {
         return service.add(dept);
@@ -33,4 +37,16 @@ public class DeptController {
         return service.list();
     }
 
+    @RequestMapping(value = "/dept/discovery",method = RequestMethod.GET)
+    public Object discovery(){
+      List<String> list=client.getServices();
+      System.out.println("***************"+list);
+
+      List<ServiceInstance> serlist=client.getInstances("MICROSERVICECLOUD-DEPT");
+      for (ServiceInstance instance:serlist){
+          System.out.println(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getUri());
+      }
+
+      return this.client;
+    };
 }
