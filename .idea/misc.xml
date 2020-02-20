@@ -10,6 +10,8 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/microservercloud-consumer-dept-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/microservicecloud-consumerhystrix_dashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/microservicecloud_consumer-hystrix_dashboard/pom.xml" />
         <option value="$PROJECT_DIR$/microservicecloudeureka7002/pom.xml" />
         <option value="$PROJECT_DIR$/microservicecloudeureka7003/pom.xml" />
       </set>

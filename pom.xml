@@ -21,6 +21,9 @@
         <module>microservercloud-consumer-dept-feign</module>
         <module>microservicecloud-consumer-dept-feign</module>
         <module>microservicecloud-provider-dept-hystrix-8001</module>
+        <module>microservicecloud_consumer-hystrix_dashboard</module>
+        <module>microservicecloud-consumerhystrix_dashboard</module>
+        <module>microservicecloud-consumer-hystrix_dashboard</module>
     </modules>
     <dependencies>
         <dependency>
